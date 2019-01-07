@@ -276,3 +276,34 @@ Processing by ArticlesController#create as HTML
   [1m[35m (6.5ms)[0m  commit transaction
 Redirected to http://165.227.81.218:55176/articles/1
 Completed 302 Found in 12ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/articles/1" for 72.229.188.23 at 2019-01-07 04:38:10 +0000
+Cannot render console from 72.229.188.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered articles/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/articles/1/edit" for 72.229.188.23 at 2019-01-07 04:38:20 +0000
+Cannot render console from 72.229.188.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered articles/_form.html.erb (2.8ms)
+  Rendered articles/edit.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/articles/1" for 72.229.188.23 at 2019-01-07 04:38:30 +0000
+Cannot render console from 72.229.188.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B+/xTNLTIgjfgY6rylJtw3bazjU63brU5xkvQA9oBVxykIvKgv+uNyb3HgHhp/CxmMO79Z9D/2rU83etNshj+g==", "article"=>{"title"=>"My article title", "body"=>"New Body Article"}, "commit"=>"Update Article", "id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "articles" SET "body" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["body", "New Body Article"], ["updated_at", "2019-01-07 04:38:30.596576"], ["id", 1]]
+  [1m[35m (3.0ms)[0m  commit transaction
+Redirected to http://165.227.81.218:55176/articles/1
+Completed 302 Found in 10ms (ActiveRecord: 4.0ms)
